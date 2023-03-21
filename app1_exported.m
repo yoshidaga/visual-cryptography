@@ -136,11 +136,14 @@ classdef app1_exported < matlab.apps.AppBase
         function DecryptionBtnPushed(app, ~)
             % 復号ボタンのコールバック
             
+            % 確認ダイアログがポップアップする
             msg = '復号する2つの画像を選択してください．';
             selection = uiconfirm(app.UIFigure,msg,'', ...
                        'Options',{'了解しました'}, ...
                        'DefaultOption',1);
             if selection == "了解しました"
+
+                % 既定のエクスプローラーからファイルを選択
                 [file,path] = uigetfile({'*.*','すべてのファイル (*.*)'},...
                             '復号する2つの画像を選択','MultiSelect','on');
                 if ~isequal(file,0)

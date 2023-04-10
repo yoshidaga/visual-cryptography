@@ -121,9 +121,9 @@ classdef app1_exported < matlab.apps.AppBase
             
             msg = '暗号化する画像を選択してください．';
             selection = uiconfirm(app.UIFigure,msg,'', ...
-                       'Options',{'了解しました'}, ...
-                       'DefaultOption',1);
-            if selection == "了解しました"
+                       'Options',{'OK','キャンセル'}, ...
+                       'DefaultOption',2);
+            if selection == "OK"
                 [file,path] = uigetfile({'*.*','すべてのファイル (*.*)'},...
                               '暗号化する画像を選択','MultiSelect','on');
                 if ~isequal(file,0)
@@ -139,9 +139,9 @@ classdef app1_exported < matlab.apps.AppBase
             % 確認ダイアログがポップアップする
             msg = '復号する2つの画像を選択してください．';
             selection = uiconfirm(app.UIFigure,msg,'', ...
-                       'Options',{'了解しました'}, ...
-                       'DefaultOption',1);
-            if selection == "了解しました"
+                       'Options',{'OK','キャンセル'}, ...
+                       'DefaultOption',2);
+            if selection == "OK"
 
                 % 既定のエクスプローラーからファイルを選択
                 [file,path] = uigetfile({'*.*','すべてのファイル (*.*)'},...
@@ -158,9 +158,9 @@ classdef app1_exported < matlab.apps.AppBase
 
             msg = '暗号化する暗号を選択してください．';
             selection = uiconfirm(app.UIFigure,msg,'', ...
-                       'Options',{'了解しました'}, ...
-                       'DefaultOption',1);
-            if selection == "了解しました"
+                       'Options',{'OK','キャンセル'}, ...
+                       'DefaultOption',2);
+            if selection == "OK"
                 [file,path] = uigetfile({'*.*','すべてのファイル (*.*)'},'暗号化する画像を選択');
                 if ~isequal(file,0)
                     fullfile1 = fullfile(path,file);
@@ -170,9 +170,9 @@ classdef app1_exported < matlab.apps.AppBase
             if exist('fullfile1','var')
                 msg = 'シートに表示する2つの画像を選択してください．';
                 selection = uiconfirm(app.UIFigure,msg,'', ...
-                           'Options',{'了解しました'}, ...
-                           'DefaultOption',1);
-                if selection == "了解しました"
+                           'Options',{'OK','キャンセル'}, ...
+                           'DefaultOption',2);
+                if selection == "OK"
                     [file,path] = uigetfile({'*.*','すべてのファイル (*.*)'},...
                                   'シートに表示する2つの画像を選択','MultiSelect','on');
                     if ~isequal(file,0)
